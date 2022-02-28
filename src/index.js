@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import LoginPage from './pages/LoginPage.js'
 import DashBoardPage from './pages/DashBoardPage.js'
+import FourOhFourPage from './pages/FourOhFourPage.js'
 
 
 ReactDOM.render(
@@ -13,6 +14,7 @@ ReactDOM.render(
       <Route path="/" element={<LoginPage />} />
       <Route path="*" element={<App />} >
         <Route path="dashboard" element={<DashBoardPage />} />
+        <Route path="*" element={<FourOhFourPage />} />
       </Route>
     </Routes>
   </BrowserRouter>,
