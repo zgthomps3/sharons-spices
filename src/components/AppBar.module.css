@@ -1,0 +1,73 @@
+.AppBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  border-bottom: 1px solid lightgrey;
+  padding: 1rem;
+}
+
+
+.Logo {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: blue;
+  
+  display: flex;
+  align-items: center;
+}
+
+.Logo img {
+  display: inline;
+  height: 2rem;
+  padding-right: 0.5rem;
+  filter: invert(7%) sepia(100%) saturate(7485%) hue-rotate(248deg) brightness(109%) contrast(143%);
+}
+
+
+.Logo:hover {
+  color: dodgerblue;
+}
+.Logo:hover img {
+  filter: invert(46%) sepia(72%) saturate(2470%) hue-rotate(190deg) brightness(98%) contrast(108%);
+}
+
+
+.Links {
+  display: flex;
+  align-items: center;
+}
+.Links > * {
+  margin-left: 1rem;
+  text-decoration: none;
+}
+
+.Link {
+  color: blue;
+}
+.Link:hover {
+  color: dodgerblue;
+}
+
+.Icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+.Icon:hover {
+  filter: invert(50%);
+}
+
+.Profile {
+  border-radius: 9999999rem;
+  color: white;
+  background-color: cornflowerblue;
+  width: 2rem;
+  height: 2rem;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Profile:hover {
+  background-color: skyblue;
+}
