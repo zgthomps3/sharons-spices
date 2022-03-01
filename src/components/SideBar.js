@@ -6,7 +6,16 @@ class SideBar extends React.Component {
   render () {
     return (
       <div className={styles.SideBar}>
-        <p>sidebar</p>
+        <div className={styles.SideBarSection}>
+          <NavLink to="/dashboard" className={({isActive}) => isActive ? styles.SideBarNavActive : styles.SideBarNav}>
+            Dashboard
+          </NavLink>
+        </div>
+        <div className={styles.SideBarSection}>
+          <NavLink to="/" className={({isActive}) => isActive ? styles.SideBarNavActive : styles.SideBarNav}>
+            Test
+          </NavLink>
+        </div>
       </div>
     );
   }

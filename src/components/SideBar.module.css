@@ -10,3 +10,25 @@
   text-transform: uppercase;
   font-size: small;
 }
+
+.SideBarSection {
+  border-bottom: 1px lightgrey solid;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+
+.SideBarNav, .SideBarNavActive {
+  text-decoration: none;
+}
+
+.SideBarNav {
+  color: #aaa;
+}
+.SideBarNavActive {
+  color: #666;
+}
+
+.SideBarNav:hover, .SideBarNavActive:hover {
+  color: skyblue;
+}
