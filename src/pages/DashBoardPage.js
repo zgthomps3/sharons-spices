@@ -4,7 +4,6 @@ import styles from './DashBoardPage.module.css'
 
 import AppBar from '../components/AppBar.js'
 import SideBar from '../components/SideBar.js'
-import Panels from '../components/Panels.js'
 
 class DashBoardPage extends React.Component {
   render () {

@@ -2,7 +2,7 @@
 
 This is the website for Sharon's Spices, Edmonton's leading spices distributor.
 
-This source code is for developers only. If you are interested in our fantastic products, you can visit our page live.
+This source code is for developers only. If you are interested in our fantastic products, you can [visit our page](https://sharons-spices.netlify.app/) live.
 
 ## Features
 
