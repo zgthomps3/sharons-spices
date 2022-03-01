@@ -1,5 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
+import styles from './DashBoardPage.module.css'
 
 import AppBar from '../components/AppBar.js'
 import SideBar from '../components/SideBar.js'
@@ -8,9 +9,13 @@ import Panels from '../components/Panels.js'
 class DashBoardPage extends React.Component {
   render () {
     return (
-      <div>
+      <div className={styles.PageContainer}>
         <AppBar />
-        <Outlet />
+        <SideBar />
+        <main className={styles.MainContent}>
+          <p>This is the main content</p>
+          <Outlet />
+        </main>
       </div>
     );
   }

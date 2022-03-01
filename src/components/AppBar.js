@@ -6,13 +6,13 @@ class AppBar extends React.Component {
   render () {
     return (
       <div className={styles.AppBar}>
-        <Link to="/" className={styles.Logo}><img src="/salt-shaker.svg" alt="" /> <span>Sharon's Spices</span></Link>
+        <Link to="/dashboard" className={styles.Logo}><img src="/salt-shaker.svg" alt="" /> <span>Sharon's Spices</span></Link>
         <div className={styles.Links}>
           <Link to="/" className={styles.Link}>Sign out</Link>
-          <Link to="/" className={styles.Icon}><img src="/mail.svg" /></Link>
-          <Link to="/" className={styles.Icon}><img src="/notification.svg" /></Link>
-          <Link to="/" className={styles.Profile}>ZT</Link>
-          <Link to="/" className={styles.Icon}><img src="/more.svg" /></Link>
+          <Link to="/mail" className={styles.Icon}><img src="/mail.svg" /></Link>
+          <Link to="/notifs" className={styles.Icon}><img src="/notification.svg" /></Link>
+          <Link to="/profile" className={styles.Profile}>ZT</Link>
+          <Link to="/more" className={styles.Icon}><img src="/more.svg" /></Link>
         </div>
       </div>
     );

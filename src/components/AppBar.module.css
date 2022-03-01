@@ -54,7 +54,7 @@
   width: 1.5rem;
 }
 .Icon:hover {
-  filter: invert(50%);
+  filter: invert(35%);
 }
 
 .Profile {

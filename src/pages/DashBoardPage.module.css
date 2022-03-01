@@ -1,0 +1,9 @@
+.PageContainer {
+  min-height: 100vh;
+}
+
+.MainContent {
+  position: relative;
+  left: 15rem;
+  width: calc(100% - 15rem);
+}
