@@ -13,7 +13,6 @@ class DashBoardPage extends React.Component {
         <AppBar />
         <SideBar />
         <main className={styles.MainContent}>
-          <p>This is the main content</p>
           <Outlet />
         </main>
       </div>

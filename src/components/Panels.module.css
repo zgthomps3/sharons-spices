@@ -1,0 +1,20 @@
+.Panel {
+  min-width: 90%;
+  margin: 1rem;
+  
+  border: 1px grey solid;
+  border-radius: 1rem;
+}
+
+.PanelHeading {
+  text-align: left;
+  font-weight: bold;
+  font-size: 2rem;
+  border-bottom: 1px grey solid;
+  
+  padding: 1rem 1.5rem;
+}
+.PanelContent {
+  min-height: 2rem;
+  padding: 1rem 1.5rem;
+}
