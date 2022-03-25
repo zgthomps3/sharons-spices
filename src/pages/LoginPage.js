@@ -48,8 +48,9 @@ class LoginPage extends React.Component {
     	<div>
 		    <div className={styles.LoginContainer}>
 		      <div>
+		      	<img src="/salt-shaker.svg" alt="" className={styles.Logo} />
 		        <h1>Welcome to Sharon's Spices.</h1>
-		        <p>At Sharon's Spices., we guarantee the highest quality spices to make your cooking painless, easy, and fun.</p>
+		        <p>At Sharon's Spices, we guarantee the highest quality spices to make your cooking painless, easy, and fun.</p>
 		        <p>Log in today to access all the services we have to offer.</p>
 		      </div>
 		      <div>

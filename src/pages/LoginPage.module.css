@@ -41,6 +41,12 @@
 }
 
 
+.Logo {
+	width: 30%;
+	margin: auto;
+}
+
+
 
 @media only screen and (max-width: 800px) {
   .LoginContainer {
