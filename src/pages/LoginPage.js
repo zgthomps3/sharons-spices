@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
+import { auth } from '../index.js'
+import { signInWithEmailAndPassword } from "firebase/auth"
 import ToastMessage from '../components/ToastMessage.js'
 import '../App.css'
 import styles from './LoginPage.module.css'
@@ -10,6 +11,7 @@ class LoginPage extends React.Component {
 		super(props);
 		this.state = { errorCount: 0 };
 		this.removeError = this.removeError.bind(this);
+		this.submitForm = this.submitForm.bind(this);
 	}
 	
 	removeError() {
@@ -19,30 +21,29 @@ class LoginPage extends React.Component {
 		});
 	}
 	
-  render () {
-  	const submitForm = (e) => {
-      e.preventDefault();
-      
-      const form = document.forms['login-form'];
-      const email = form['email'].value;
-      const password = form['password'].value;
-      
-      const auth = getAuth();
-      signInWithEmailAndPassword(auth, email, password)
-      	.then((userCredential) => {
-      		const user = userCredential.user;
-      		window.location = '/dashboard';
-      	})
-      	.catch((error) => {
-      		const errorCode = error.code;
-      		const errorMessage = error.message;
-      		this.setState({
-      			errorCount: this.state.errorCount+1,
-      			errorMessage: ("Error logging in: " + errorMessage)
-      		});
-      	});
-    };
+	submitForm (e) {
+    e.preventDefault();
     
+    const form = document.forms['login-form'];
+    const email = form['email'].value;
+    const password = form['password'].value;
+    
+    signInWithEmailAndPassword(auth, email, password)
+    	.then((userCredential) => {
+    		const user = userCredential.user;
+    		window.location = '/dashboard';
+    	})
+    	.catch((error) => {
+    		const errorCode = error.code;
+    		const errorMessage = error.message;
+    		this.setState({
+    			errorCount: this.state.errorCount+1,
+    			errorMessage: ("Error logging in: " + errorMessage)
+    		});
+    	});
+  };
+	
+  render () {
     return (
     	<div>
 		    <div className={styles.LoginContainer}>
@@ -52,7 +53,7 @@ class LoginPage extends React.Component {
 		        <p>Log in today to access all the services we have to offer.</p>
 		      </div>
 		      <div>
-		        <form name="login-form" className={styles.LoginForm} onSubmit={submitForm}>
+		        <form name="login-form" className={styles.LoginForm} onSubmit={this.submitForm}>
 		          <h2>Sign in:</h2>
 		          
 		          <div className={styles.LoginFormField}>
