@@ -1,6 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styles from './SideBar.module.css'
+import { auth } from '../index.js';
+import { signOut } from "firebase/auth";
 
 class SideBar extends React.Component {
   render () {
@@ -56,7 +58,7 @@ class SideBar extends React.Component {
           </NavLink>
         </div>
         <div className={styles.SideBarSection}>
-          <NavLink to="/" className={({isActive}) => isActive ? styles.SideBarNavActive : styles.SideBarNav}>
+          <NavLink to="/" className={({isActive}) => isActive ? styles.SideBarNavActive : styles.SideBarNav} onClick={() => { signOut(auth); } } >
             <img src="/left-arrow.svg" alt="" /><span>Sign out</span>
           </NavLink>
         </div>
