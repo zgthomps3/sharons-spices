@@ -19,6 +19,10 @@
   border-bottom: 1px lightgrey solid;
 }
 
+.SideBarSubSection {
+	padding-left: 1rem;
+}
+
 
 .SideBarNav, .SideBarNavActive {
   display: flex;

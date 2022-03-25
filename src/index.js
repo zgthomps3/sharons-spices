@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import LoginPage from './pages/LoginPage.js'
@@ -21,7 +21,7 @@ const firebaseConfig = {
   appId: "1:803238398469:web:74c847274b8b0eb22f6a6c"
 };
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth();
+export const auth = getAuth(app);
 
 
 
@@ -35,7 +35,11 @@ ReactDOM.render(
 		        <Route path="vendors" element={<Panels name="Vendors" content={<p>This is the panel content</p>} />} />
 		        <Route path="users" element={<Panels name="Users" content={<p>This is the panel content</p>} />} />
 		        <Route path="categories" element={<Panels name="Categories" content={<p>This is the panel content</p>} />} />
-		        <Route path="products" element={<Panels name="Product Listings" content={<p>This is the panel content</p>} />} />
+		        <Route path="products" element={<Outlet />} >
+		        	<Route path="add" element={<Panels name="Add New Product" content={<p>This is the panel content</p>} />} />
+		        	<Route path="edit" element={<Panels name="Edit Product" content={<p>This is the panel content</p>} />} />
+		        	<Route path="*" element={<Panels name="View All Products" content={<p>This is the panel content</p>} />} />
+		        </Route>
 		        <Route path="orders" element={<Panels name="Orders" content={<p>This is the panel content</p>} />} />
 		        <Route path="reviews" element={<Panels name="Reviews" content={<p>This is the panel content</p>} />} />
 		        <Route path="brands" element={<Panels name="Brands" content={<p>This is the panel content</p>} />} />

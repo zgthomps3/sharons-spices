@@ -30,11 +30,9 @@ class LoginPage extends React.Component {
     
     signInWithEmailAndPassword(auth, email, password)
     	.then((userCredential) => {
-    		const user = userCredential.user;
     		window.location = '/dashboard';
     	})
     	.catch((error) => {
-    		const errorCode = error.code;
     		const errorMessage = error.message;
     		this.setState({
     			errorCount: this.state.errorCount+1,
