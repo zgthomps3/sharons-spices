@@ -9,7 +9,6 @@ function useGetAllProducts () {
 		const productsRef = ref(db, 'products');
 		
 		const unsubscribe = onValue(productsRef, (snapshot) => {
-			console.log("setting products!");
 			setProducts(snapshot.val());
 		});
 		

@@ -25,3 +25,21 @@
 	font-weight: bold;
 	margin: 0;
 }
+
+
+.ProductButtons {
+	text-align: right;
+}
+
+.ProductButtons > * {
+	display: inline-block;
+	height: 1rem;
+	width: 1rem;
+	margin-left: 0.5rem;
+	
+	filter: invert(50%);
+}
+
+.ProductButtons > *:hover {
+	filter: invert(25%);
+}

@@ -15,7 +15,7 @@ function ViewAllProducts() {
 					(product) => {
 						const key = product[0];
 						const data = product[1];
-						return <ProductCard key={key} name={data.name} image={data.image} price={'$' + (data.price/100).toString() } description={data.description} />
+						return <ProductCard key={key} id={key} name={data.name} image={data.image} price={'$' + (data.price/100).toString() } description={data.description} />
 					}
 				)
 			}
