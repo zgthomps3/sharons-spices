@@ -1,6 +1,6 @@
 import { db } from '../index.js'
 import { ref, onValue } from 'firebase/database'
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 function useGetAllProducts () {
 	const [products, setProducts] = useState(null);

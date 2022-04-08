@@ -7,7 +7,7 @@ import LoginPage from './pages/LoginPage.js'
 import DashBoardPage from './pages/DashBoardPage.js'
 import FourOhFourPage from './pages/FourOhFourPage.js'
 import Panels from './components/Panels.js'
-import ProductCard from './components/ProductCard.js'
+import ViewAllProducts from './components/ViewAllProducts.js'
 import ProtectedRoute from './components/ProtectedRoute.js'
 import { initializeApp } from 'firebase/app'
 import { getDatabase } from 'firebase/database'
@@ -41,15 +41,7 @@ ReactDOM.render(
 		        <Route path="products" element={<Outlet />} >
 		        	<Route path="add" element={<Panels name="Add New Product" content={<p>This is the panel content</p>} />} />
 		        	<Route path="edit" element={<Panels name="Edit Product" content={<p>This is the panel content</p>} />} />
-		        	<Route path="*" element={<Panels name="View All Products"
-		        		content={
-		        			<div style={{ display: 'flex', gap: '1rem' }}>
-		        				<ProductCard name="Oregano" price="$19.99" image="/placeholder.png" description="Oregano is a really good spice for cooking." />
-		        				<ProductCard name="Onion Powder" price="$24.99" image="/placeholder.png" description="Onion powder tastes like onions." />
-		        				<ProductCard name="Garlic Powder" price="$22.49" image="/placeholder.png" description="Garlic powder tastes like garlic." />
-		        			</div>
-		        		}/>
-		        	}/>
+		        	<Route path="*" element={<Panels name="View All Products" content={<ViewAllProducts />} />} />
 		        </Route>
 		        <Route path="orders" element={<Panels name="Orders" content={<p>This is the panel content</p>} />} />
 		        <Route path="reviews" element={<Panels name="Reviews" content={<p>This is the panel content</p>} />} />
