@@ -30,7 +30,7 @@ class LoginPage extends React.Component {
     
     signInWithEmailAndPassword(auth, email, password)
     	.then((userCredential) => {
-    		window.location = '/dashboard';
+    		window.location = '/dashboard/products/all';
     	})
     	.catch((error) => {
     		const errorMessage = error.message;
