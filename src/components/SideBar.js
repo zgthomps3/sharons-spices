@@ -35,9 +35,6 @@ class SideBar extends React.Component {
           	<NavLink to="/dashboard/products/add" className={({isActive}) => isActive ? styles.SideBarNavActive : styles.SideBarNav}>
             	<img src="/add.svg" alt="" /><span>Add New Product</span>
           	</NavLink>
-          	<NavLink to="/dashboard/products/edit" className={({isActive}) => isActive ? styles.SideBarNavActive : styles.SideBarNav}>
-            	<img src="/edit.svg" alt="" /><span>Edit Product</span>
-          	</NavLink>
           </div>
           <NavLink to="/dashboard/orders" className={({isActive}) => isActive ? styles.SideBarNavActive : styles.SideBarNav}>
             <img src="/shopping-cart.svg" alt="" /><span>Orders</span>

@@ -10,10 +10,13 @@ class ProductCard extends React.Component {
 				<p className={styles.ProductName}>{this.props.name}</p>
 				<p className={styles.ProductPrice}>{this.props.price}</p>
 				<p className={styles.ProductDescription}>{this.props.description}</p>
-				<div className={styles.ProductButtons}>
-					<Link to={'/dashboard/products/edit?key=' + this.props.id.toString()}><img src="/edit.svg" alt="Edit" /></Link>
-					<Link to={'/dashboard/products/delete?key=' + this.props.id.toString()}><img src="/delete.svg" alt="Delete" /></Link>
-				</div>
+				{ this.props.editable ? 
+					<div className={styles.ProductButtons}>
+						<Link to={'/dashboard/products/edit/' + this.props.id.toString()}><img src="/edit.svg" alt="Edit" /></Link>
+						<Link to={'/dashboard/products/delete/' + this.props.id.toString()}><img src="/delete.svg" alt="Delete" /></Link>
+					</div>
+					: null
+				}
 			</div>
 		);
 	}

@@ -8,6 +8,7 @@ import DashBoardPage from './pages/DashBoardPage.js'
 import FourOhFourPage from './pages/FourOhFourPage.js'
 import Panels from './components/Panels.js'
 import ViewAllProducts from './components/ViewAllProducts.js'
+import ProductForm from './components/ProductForm.js'
 import ProtectedRoute from './components/ProtectedRoute.js'
 import { initializeApp } from 'firebase/app'
 import { getDatabase } from 'firebase/database'
@@ -39,8 +40,9 @@ ReactDOM.render(
 		        <Route path="users" element={<Panels name="Users" content={<p>This is the panel content</p>} />} />
 		        <Route path="categories" element={<Panels name="Categories" content={<p>This is the panel content</p>} />} />
 		        <Route path="products" element={<Outlet />} >
-		        	<Route path="add" element={<Panels name="Add New Product" content={<p>This is the panel content</p>} />} />
-		        	<Route path="edit" element={<Panels name="Edit Product" content={<p>This is the panel content</p>} />} />
+		        	<Route path="add" element={<Panels name="Add New Product" content={<ProductForm />} />} />
+		        	<Route path="edit/:id" element={<Panels name="Edit Product" content={<ProductForm />} />} />
+		        	<Route path="edit" element={<Panels name="Edit Product" content={<p>No product specified!</p>} />} />
 		        	<Route path="*" element={<Panels name="View All Products" content={<ViewAllProducts />} />} />
 		        </Route>
 		        <Route path="orders" element={<Panels name="Orders" content={<p>This is the panel content</p>} />} />
