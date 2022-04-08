@@ -5,16 +5,18 @@ import { useState, useEffect } from 'react'
 function useGetAllProducts () {
 	const [products, setProducts] = useState(null);
 	
-	const productsRef = ref(db, 'products');
-	
 	useEffect(() => {
-		onValue(productsRef, (snapshot) => {
+		const productsRef = ref(db, 'products');
+		
+		const unsubscribe = onValue(productsRef, (snapshot) => {
+			console.log("setting products!");
 			setProducts(snapshot.val());
 		});
+		
 		return () => {
-			productsRef.off();
+			unsubscribe();
 		};
-	});
+	}, []);
 	
 	return products;
 }
